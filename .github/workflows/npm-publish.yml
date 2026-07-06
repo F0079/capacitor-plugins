@@ -19,10 +19,13 @@ jobs:
           distribution: 'zulu'
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+        with:
+          registry-url: https://npmpkg.github.com
+          scope: "@F0079"
       - run: npm i
       - run: cd local-notifications && npm i
       - run: cd local-notifications/android && ./gradlew build
       - run: cd local-notifications && npm run build
-#       - run: npm publish
-#        env:
-#          FOO: "bla"
+      - run: npm publish
+      #  env:
+        #  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
