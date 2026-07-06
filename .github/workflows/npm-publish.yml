@@ -23,9 +23,15 @@ jobs:
           registry-url: https://npmpkg.github.com
           scope: "@F0079"
       - run: npm i
-      - run: cd local-notifications && npm i
-      - run: cd local-notifications/android && ./gradlew build
-      - run: cd local-notifications && npm run build
-      - run: npm publish
+      - run: |
+          cd local-notifications
+          npm i
+      - run: |
+          cd local-notifications/android
+          ./gradlew build
+      - run: |
+          cd local-notifications
+          npm run build
+          npm publish
       #  env:
         #  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
