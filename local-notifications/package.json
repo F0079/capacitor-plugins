@@ -80,6 +80,6 @@
     }
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github..com/@F0079"
+    "registry": "https://npm.pkg.github.com/@F0079"
   }
 }
