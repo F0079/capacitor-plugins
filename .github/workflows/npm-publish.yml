@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
       - run: npm i
       - run: cd local-notifications && npm i
-      - run: cd android && ./gradlew build
+      - run: cd local-notifications/android && ./gradlew build
       - run: cd local-notifications && npm run build
 #       - run: npm publish
 #        env:
